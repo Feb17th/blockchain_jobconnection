@@ -1,0 +1,37 @@
+{
+    "name": "asset-transfer-basic",
+    "version": "1.0.0",
+    "description": "Asset Transfer Basic contract implemented in TypeScript",
+    "main": "dist/index.js",
+    "typings": "dist/index.d.ts",
+    "engines": {
+        "node": ">=18"
+    },
+   "scripts": {
+    "start:server-nontls": "set -x && fabric-chaincode-node server --chaincode-address=$CHAINCODE_SERVER_ADDRESS --chaincode-id=$CHAINCODE_ID",
+    "build": "tsc",
+    "start": "nodemon --exec yarn build:start",
+    "build:start": "tsc && set -x && fabric-chaincode-node server --chaincode-address=$CHAINCODE_SERVER_ADDRESS --chaincode-id=$CHAINCODE_ID"
+},
+    "engineStrict": true,
+    "author": "Hyperledger",
+    "license": "Apache-2.0",
+    "dependencies": {
+        "dotenv": "^16.4.5",
+        "fabric-contract-api": "~2.5",
+        "fabric-shim": "~2.5",
+        "json-stringify-deterministic": "^1.0.0",
+        "jsonwebtoken": "^9.0.2",
+        "sort-keys-recursive": "^2.1.0"
+    },
+    "devDependencies": {
+        "@eslint/js": "^9.3.0",
+        "@tsconfig/node18": "^18.2.4",
+        "@types/jsonwebtoken": "^9.0.6",
+        "@types/node": "^18.19.33",
+        "eslint": "^8.57.0",
+        "typescript": "~5.4.5",
+        "typescript-eslint": "^7.11.0",
+        "nodemon": "^3.1.4"
+    }
+}
